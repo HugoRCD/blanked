@@ -2,10 +2,10 @@
 
 <p align="center">
   <a aria-label="NPM version" href="https://www.npmjs.com/package/blanked">
-    <img alt="" src="https://img.shields.io/npm/v/blanked.svg?style=for-the-badge&labelColor=00DC82&color=00DC82">
+    <img alt="" src="https://img.shields.io/npm/v/blanked.svg?style=for-the-badge&labelColor=000000&color=000000">
   </a>
   <a aria-label="License" href="https://github.com/blanked/blanked/main/LICENSE">
-    <img alt="" src="https://img.shields.io/npm/l/blanked.svg?style=for-the-badge&labelColor=00DC82&color=00DC82">
+    <img alt="" src="https://img.shields.io/npm/l/blanked.svg?style=for-the-badge&labelColor=000000&color=000000">
     </a>
   <a aria-label="Follow Hugo on Twitter" href="https://twitter.com/HugoRCD__">
     <img alt="" src="https://img.shields.io/twitter/follow/HugoRCD__.svg?style=for-the-badge&labelColor=000000&logo=twitter&label=Follow%20Hugo&logoWidth=20&logoColor=white">
@@ -61,3 +61,8 @@ That's it! You can now use Blanked in your Nuxt app ✨
 
 - Hugo Richard ([@HugoRCD__](https://x.com/HugoRCD__))
 - Johann Cavallucci ([@JohannCavallucci](https://github.com/cavalluccijohann))
+
+## Thanks
+
+This module is heavily inspired by the NuxtUI module, which embeds TailwindCSS, Color Mode and Icons in your Nuxt app. However, I wanted to make a module to start a Nuxt project without the components, etc...
+

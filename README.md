@@ -1,11 +1,11 @@
-![blanked Social Preview](./blanked-social-preview.png)
+![blanked-social-preview.png](blanked-social-preview.png)
 
 <p align="center">
   <a aria-label="NPM version" href="https://www.npmjs.com/package/blanked">
-    <img alt="" src="https://img.shields.io/npm/v/blanked.svg?style=for-the-badge&labelColor=000000&color=000000">
+    <img alt="" src="https://img.shields.io/npm/v/blanked.svg?style=for-the-badge&labelColor=000000&color=E05C44">
   </a>
-  <a aria-label="License" href="https://github.com/blanked/blanked/main/LICENSE">
-    <img alt="" src="https://img.shields.io/npm/l/blanked.svg?style=for-the-badge&labelColor=000000&color=000000">
+  <a aria-label="License" href="https://github.com/HugoRCD/blanked/main/LICENSE">
+    <img alt="" src="https://img.shields.io/npm/l/blanked.svg?style=for-the-badge&labelColor=000000&color=E05C44">
     </a>
   <a aria-label="Follow Hugo on Twitter" href="https://twitter.com/HugoRCD__">
     <img alt="" src="https://img.shields.io/twitter/follow/HugoRCD__.svg?style=for-the-badge&labelColor=000000&logo=twitter&label=Follow%20Hugo&logoWidth=20&logoColor=white">

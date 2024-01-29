@@ -18,11 +18,52 @@ Blanked is a Nuxt module to improve your Nuxt workflow. It's a simple module to 
 - Icons, add every icons from your favorite icon pack (Heroicons and Lucide are pre-installed)
 - Toasts, using the amazing [Vue Sonner](https://vue-sonner.vercel.app/) library
 
-Thanks to @egoist/tailwindcss-icons plugin, only the icons you use in your app will be bundled in your CSS. However, you need to install the icon collections you specified in the blanked.icons key:
-  
-  ```bash
-  bun i -D @iconify-json/{collection_name}
-  ```
+From
+```json
+{
+  "name": "new-blanked-project",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "nuxi dev",
+    "build": "nuxi build",
+    "generate": "nuxi generate"
+  },
+  "devDependencies": {
+    "nuxt": "latest",
+    "@nuxtjs/color-mode": "latest",
+    "@nuxtjs/tailwindcss": "latest",
+    "@tailwindcss/aspect-ratio": "^0.4.2",
+    "@tailwindcss/container-queries": "^0.1.1",
+    "@tailwindcss/forms": "^0.5.7",
+    "@tailwindcss/typography": "^0.5.10",
+    "@egoist/tailwindcss-icons": "^1.7.2",
+    "@iconify-json/heroicons": "^1.1.19",
+    "@iconify-json/lucide": "^1.1.154",
+    "tailwindcss": "^3.4.1",
+    "nuxt-icon": "^0.6.8",
+    "vue-sonner": "^1.0.3"
+  }
+}
+```
+
+To
+```json
+{
+  "name": "new-blanked-project",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "nuxi dev",
+    "build": "nuxi build",
+    "generate": "nuxi generate"
+  },
+  "devDependencies": {
+    "nuxt": "latest",
+    "blanked": "latest"
+  }
+}
+```
 
 ## Quick Setup
 
@@ -52,6 +93,12 @@ export default defineNuxtConfig({
     'blanked'
   ]
 })
+```
+
+Thanks to @egoist/tailwindcss-icons plugin, only the icons you use in your app will be bundled in your CSS. However, you need to install the icon collections you specified in the blanked.icons key:
+
+```bash
+bun i -D @iconify-json/{collection_name}
 ```
 
 ### Toasts

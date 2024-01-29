@@ -5,7 +5,7 @@ export default defineAppConfig({
       {
         name: 'github',
         icon: 'i-lucide-github',
-        url: 'https://github.com/HugoRCD',
+        url: 'https://github.com/HugoRCD/blanked',
       },
       {
         name: 'twitter',

@@ -56,7 +56,7 @@ export default defineNuxtConfig({
 
 ### Toasts
 
-To use the toast component, you need to add the `<Toaster />` component in your app. You can add it in your `layouts/default.vue` or `app.vue` file for example.
+To use the toast component, you need to add the `<Toasts />` component in your app. You can add it in your `layouts/default.vue` or `app.vue` file for example.
 To render the toasts, you need to use the `toast()` function.
 For more information, check the [Vue Sonner](https://vue-sonner.vercel.app/) documentation.
 

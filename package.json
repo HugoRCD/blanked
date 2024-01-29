@@ -10,6 +10,7 @@
     "Hugo Richard <contact@hrcd.fr>",
     "Johann Cavallucci"
   ],
+  "homepage": "https://blanked.hrcd.fr/",
   "exports": {
     ".": {
       "types": "./dist/types.d.ts",
@@ -28,7 +29,12 @@
     "tailwindcss",
     "color-mode",
     "nuxt-icon",
-    "nuxt-module"
+    "nuxt-module",
+    "vue-sonner",
+    "sonner",
+    "tailwindcss-icons",
+    "heroicons",
+    "lucide"
   ],
   "scripts": {
     "prepack": "nuxt-module-build build",

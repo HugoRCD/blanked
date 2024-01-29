@@ -1,0 +1,20 @@
+.dark {
+  --primary: #020202;
+  --gray: #1A1A1A;
+  --accent: #ffffff;
+
+  --font-primary: #E0E0E0;
+  --font-muted: #BCBCBC;
+  --font-inverted: #000000;
+}
+
+.light {
+  --primary: #ffffff;
+  --gray: #F5F5F5;
+  --accent: #000000;
+
+  --font-primary: #000000;
+  --font-muted: #6E6E6E;
+  --font-inverted: #ffffff;
+}
+

@@ -102,17 +102,16 @@ async function copyToClipboard(string: string) {
             <ThemeToggle />
           </div>
           <div
-            class="terminal bg-black dark:bg-white rounded-lg shadow-lg p-4 backdrop-blur-lg bg-opacity-80 dark:bg-opacity-30"
+            class="terminal  text-inverted text-xl bg-accent rounded-lg shadow-lg p-4 backdrop-blur-lg dark:bg-opacity-30"
             @click="copyToClipboard('bun i -d blanked')"
           >
-            <div class="text-pretty text-xl leading-6 text-white dark:text-black tracking-wide cursor-pointer flex items-center justify-center gap-2">
+            <div class="text-pretty  leading-6 tracking-wide cursor-pointer flex items-center justify-center gap-2">
               <span>
                 bun i -D blanked
               </span>
               <span
                 v-if="!copy"
-                class="i-lucide-copy
-                text-lg text-white dark:text-black cursor-pointer"
+                class="i-lucide-copy"
               />
               <span
                 v-else
@@ -123,6 +122,15 @@ async function copyToClipboard(string: string) {
           <p class="text-muted text-lg leading-6 text-pretty">
             A Nuxt module to improve your developer experience, give you a head start and make your life easier.
             Add tailwindcss, toast notifications, dark mode, and more to your Nuxt app in seconds.
+            <span>
+              Made with love by
+              <NuxtLink
+                class="text-accent"
+                to="https://hrcd.fr"
+              >
+                HugoRCD
+              </NuxtLink>
+            </span>
           </p>
           <div>
             <div>

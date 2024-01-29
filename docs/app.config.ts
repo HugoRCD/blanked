@@ -1,6 +1,5 @@
 export default defineAppConfig({
     appName: "Blanked",
-    appDescription: "",
     footerName: "HugoRCD",
     socials: [
       {

@@ -161,7 +161,7 @@ async function copyToClipboard(string: string) {
           </div>
         </div>
         <Toasts
-          visible-toasts="5"
+          :visible-toasts="5"
           close-button
         />
       </div>

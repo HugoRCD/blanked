@@ -1,4 +1,4 @@
-import { defineNuxtModule, createResolver, installModule, addComponentsDir } from "@nuxt/kit";
+import { defineNuxtModule, createResolver, installModule, addComponentsDir, addImportsSources } from "@nuxt/kit";
 import { name, version } from '../package.json';
 import { iconsPlugin, getIconCollections, type CollectionNames, type IconsPluginOptions } from "@egoist/tailwindcss-icons";
 
@@ -63,6 +63,10 @@ export default defineNuxtModule<ModuleOptions>({
           require('@tailwindcss/container-queries'),
         ],
       }
+    })
+    addImportsSources({
+      from: 'vue-sonner',
+      imports: ['toast', 'Toaster', 'Toast'],
     })
     if (options.injectComponents) {
       await addComponentsDir({

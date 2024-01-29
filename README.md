@@ -16,6 +16,7 @@ Blanked is a Nuxt module to improve your Nuxt workflow. It's a simple module to 
 - TailwindCSS
 - Color Mode, add a color mode switcher to your app (dark/light or custom)
 - Icons, add every icons from your favorite icon pack (Heroicons and Lucide are pre-installed)
+- Toasts, using the amazing [Vue Sonner](https://vue-sonner.vercel.app/) library
 
 Thanks to @egoist/tailwindcss-icons plugin, only the icons you use in your app will be bundled in your CSS. However, you need to install the icon collections you specified in the blanked.icons key:
   
@@ -52,6 +53,12 @@ export default defineNuxtConfig({
   ]
 })
 ```
+
+### Toasts
+
+To use the toast component, you need to add the `<Toasts />` component in your app. You can add it in your `layouts/default.vue` or `app.vue` file for example.
+To render the toasts, you need to use the `toast()` function.
+For more information, check the [Vue Sonner](https://vue-sonner.vercel.app/) documentation.
 
 That's it! You can now use Blanked in your Nuxt app ✨
 

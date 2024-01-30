@@ -13,6 +13,12 @@ export default defineNuxtConfig({
     },
   },
 
+  experimental: {
+    noVueServer: true,
+  },
+
+  modules: ['blanked'],
+
   routeRules: {
     "/": { isr: true, prerender: true },
   },
@@ -23,8 +29,6 @@ export default defineNuxtConfig({
       routes: ['/'],
     },
   },
-
-  modules: ['blanked'],
 
   css: ['~/main.css'],
 

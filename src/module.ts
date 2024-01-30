@@ -72,7 +72,7 @@ export default defineNuxtModule<ModuleOptions>({
     })
     addImportsSources({
       from: 'vue-sonner',
-      imports: ['toast', 'ToasterProps'],
+      imports: ['toast'],
     })
     if (options.injectComponents) {
       await addComponentsDir({

@@ -1,7 +1,28 @@
 <script setup lang="ts">
-import { Toaster, ToasterProps } from "vue-sonner";
+import type { Position, Theme, ToastOptions } from "vue-sonner/lib/types";
+import type { CSSProperties } from "vue";
+import { Toaster } from "vue-sonner";
 
-const VISIBLE_TOASTS_AMOUNT = 3
+interface ToasterProps {
+  invert?: boolean;
+  theme?: Theme;
+  position?: Position;
+  hotkey?: string[];
+  richColors?: boolean;
+  expand?: boolean;
+  duration?: number;
+  gap?: number;
+  visibleToasts?: number;
+  closeButton?: boolean;
+  toastOptions?: ToastOptions;
+  className?: string;
+  style?: CSSProperties;
+  offset?: string | number;
+  dir?: 'rtl' | 'ltr' | 'auto';
+}
+
+// Default amount of visible toasts
+const VISIBLE_TOASTS_AMOUNT = 4
 
 // Viewport padding
 const VIEWPORT_OFFSET = '32px'

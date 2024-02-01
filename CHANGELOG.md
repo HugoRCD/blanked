@@ -1,4 +1,16 @@
 
+## v0.0.8
+
+[compare changes](https://github.com/HugoRCD/blanked/compare/v0.0.7...v0.0.8)
+
+### 🏡 Chore
+
+- Use template for twConfig ([ef2388c](https://github.com/HugoRCD/blanked/commit/ef2388c))
+
+### ❤️ Contributors
+
+- Inesh Bose <dev@inesh.xyz>
+
 ## v0.0.7
 
 [compare changes](https://github.com/HugoRCD/blanked/compare/v0.0.6...v0.0.7)

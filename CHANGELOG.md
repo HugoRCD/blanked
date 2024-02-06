@@ -1,4 +1,20 @@
 
+## v0.0.10
+
+[compare changes](https://github.com/HugoRCD/blanked/compare/v0.0.9...v0.0.10)
+
+### 🚀 Enhancements
+
+- Add reactive mouse position detection ([7ff5c85](https://github.com/HugoRCD/blanked/commit/7ff5c85))
+
+### 🏡 Chore
+
+- **release:** V0.0.9 ([15af784](https://github.com/HugoRCD/blanked/commit/15af784))
+
+### ❤️ Contributors
+
+- HugoRCD ([@HugoRCD](http://github.com/HugoRCD))
+
 ## v0.0.9
 
 [compare changes](https://github.com/HugoRCD/blanked/compare/v0.0.8...v0.0.9)

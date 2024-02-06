@@ -4,7 +4,7 @@ import {
   installModule,
   addTemplate,
   addComponentsDir,
-  addImportsSources,
+  addImportsSources, addImportsDir,
 } from "@nuxt/kit";
 import { join } from 'node:path'
 import { name, version } from '../package.json';
@@ -17,6 +17,11 @@ export interface ModuleOptions {
    * @default true
    */
   injectComponents?: boolean
+  /**
+   * Enable auto-import of all composables
+   * @default true
+   */
+  injectComposables?: boolean
   /**
    * The icon collections to use
    * @default ['heroicons', 'lucide']
@@ -36,7 +41,8 @@ export default defineNuxtModule<ModuleOptions>({
   // Default configuration options of the Nuxt module
   defaults: {
     icons: ['heroicons', 'lucide'],
-    injectComponents: true
+    injectComponents: true,
+    injectComposables: true
   },
   async setup(options, nuxt) {
     const { resolve } = createResolver(import.meta.url);
@@ -81,6 +87,9 @@ export default defineNuxtModule<ModuleOptions>({
       from: 'vue-sonner',
       imports: ['toast'],
     })
+    if (options.injectComposables) {
+      addImportsDir(resolve('runtime/composables'))
+    }
     if (options.injectComponents) {
       await addComponentsDir({
         path: resolve(runtimeDir, 'components', 'elements'),

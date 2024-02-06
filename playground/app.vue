@@ -1,8 +1,56 @@
+<script setup lang="ts">
+const { width, height } = useWindowSize();
+const { x, y } = useMouse();
+const target = ref(null);
+
+useClickElement(target, () => {
+  toast('Clicked outside of the circle!');
+});
+useClickElement(target, () => {
+  toast('Clicked inside of the circle!');
+}, "inside");
+const size = useElementSize(target);
+
+const customBreakpoints = {
+  sm: 640,
+  md: 768,
+  lg: 1024,
+};
+
+const {
+  breakpoint,
+  greaterThan,
+  lessThan,
+  equalTo,
+  between,
+  greaterThanOrEqual,
+  lessThanOrEqual
+} = useBreakpoints(customBreakpoints);
+</script>
+
 <template>
-  <div class="bg-zinc-100 w-full h-screen dark:bg-zinc-900">
+  <div class="bg-zinc-100 w-full h-screen dark:bg-zinc-900 text-zinc-900 dark:text-zinc-100">
     <div class="flex flex-col items-center justify-center h-full">
       <div class="flex items-center justify-center gap-4">
-        <h1 class="text-4xl font-bold text-zinc-900 dark:text-zinc-100">
+        Breakpoint: {{ breakpoint }} {{ lessThanOrEqual('md') }}
+      </div>
+      <div class="flex items-center justify-center gap-4">
+        Circle size: {{ size.width }} x {{ size.height }}
+      </div>
+      <div
+        ref="target"
+        class="size-36 bg-zinc-500 dark:bg-zinc-600 rounded-full flex items-center justify-center"
+      >
+        Click me
+      </div>
+      <div class="flex items-center justify-center gap-4">
+        Mouse position: {{ x }} x {{ y }}
+      </div>
+      <div class="flex items-center justify-center gap-4">
+        Window size: {{ width }} x {{ height }}
+      </div>
+      <div class="flex items-center justify-center gap-4">
+        <h1 class="text-4xl font-bold">
           Blanked
         </h1>
         <ThemeToggle />
@@ -17,6 +65,3 @@
     <Toasts />
   </div>
 </template>
-
-<script setup>
-</script>

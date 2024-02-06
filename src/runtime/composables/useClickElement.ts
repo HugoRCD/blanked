@@ -1,4 +1,5 @@
-import { Ref } from "vue";
+import { onMounted, onUnmounted } from 'vue';
+import type { Ref } from 'vue';
 
 /**
  * @description: This composable is used to detect clicks inside or outside of a target element.

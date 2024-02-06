@@ -1,3 +1,5 @@
+import { ref, onMounted, onUnmounted } from 'vue';
+
 const defaultBreakpoints = {
   xs: 576,
   sm: 768,

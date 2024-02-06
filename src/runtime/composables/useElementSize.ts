@@ -1,3 +1,6 @@
+import { ref, onMounted } from 'vue';
+import type { Ref } from 'vue';
+
 /**
  * @description: This composable is used to detect the size of an element (reactive).
  * @param target

@@ -1,4 +1,16 @@
 
+## v0.0.9
+
+[compare changes](https://github.com/HugoRCD/blanked/compare/v0.0.8...v0.0.9)
+
+### 🚀 Enhancements
+
+- Add new composables for breakpoint detection, click element, element size, mouse position, and window size ([78466bd](https://github.com/HugoRCD/blanked/commit/78466bd))
+
+### ❤️ Contributors
+
+- HugoRCD ([@HugoRCD](http://github.com/HugoRCD))
+
 ## v0.0.8
 
 [compare changes](https://github.com/HugoRCD/blanked/compare/v0.0.7...v0.0.8)

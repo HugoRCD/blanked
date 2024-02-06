@@ -88,7 +88,7 @@ export default defineNuxtModule<ModuleOptions>({
       imports: ['toast'],
     })
     if (options.injectComposables) {
-      addImportsDir(resolve('runtime/composables'))
+      addImportsDir(resolve(runtimeDir, 'composables'))
     }
     if (options.injectComponents) {
       await addComponentsDir({

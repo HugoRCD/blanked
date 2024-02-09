@@ -1,5 +1,4 @@
 <script setup lang="ts">
-const { width, height } = useWindowSize();
 const { x, y } = useMouse();
 const target = ref(null);
 
@@ -18,6 +17,9 @@ const customBreakpoints = {
 };
 
 const {
+  width,
+  height,
+  scroll,
   breakpoint,
   greaterThan,
   lessThan,
@@ -25,7 +27,9 @@ const {
   between,
   greaterThanOrEqual,
   lessThanOrEqual
-} = useBreakpoints(customBreakpoints);
+} = useWindowInfos(customBreakpoints);
+
+const { isInside, elementPosition, elementSize, positionInside } = useMouseInElement(target);
 </script>
 
 <template>
@@ -36,6 +40,15 @@ const {
       </div>
       <div class="flex items-center justify-center gap-4">
         Circle size: {{ size.width }} x {{ size.height }}
+      </div>
+      <div class="flex items-center justify-center gap-4">
+        Mouse is {{ isInside ? 'inside' : 'outside' }} the circle
+      </div>
+      <div class="flex items-center justify-center gap-4">
+        Mouse position inside the circle: {{ positionInside.x }} x {{ positionInside.y }} - {{ elementSize.width }} x {{ elementSize.height }}
+      </div>
+      <div class="flex items-center justify-center gap-4">
+        Element position: {{ elementPosition.x }} x {{ elementPosition.y }}
       </div>
       <div
         ref="target"
@@ -48,6 +61,9 @@ const {
       </div>
       <div class="flex items-center justify-center gap-4">
         Window size: {{ width }} x {{ height }}
+      </div>
+      <div class="flex items-center justify-center gap-4">
+        Scroll position: {{ scroll.x }} x {{ scroll.y }}
       </div>
       <div class="flex items-center justify-center gap-4">
         <h1 class="text-4xl font-bold">

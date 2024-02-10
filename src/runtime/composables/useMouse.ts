@@ -14,6 +14,8 @@ export function useMouse() {
     window.addEventListener('mousemove', (event) => {
       x.value = event.clientX;
       y.value = event.clientY;
+      document.documentElement.style.setProperty('--mouse-x', `${x.value}px`);
+      document.documentElement.style.setProperty('--mouse-y', `${y.value}px`);
     });
   });
 
@@ -21,6 +23,8 @@ export function useMouse() {
     window.removeEventListener('mousemove', (event) => {
       x.value = event.clientX;
       y.value = event.clientY;
+      document.documentElement.style.removeProperty('--mouse-x');
+      document.documentElement.style.removeProperty('--mouse-y');
     });
   });
 

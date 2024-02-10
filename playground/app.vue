@@ -34,6 +34,15 @@ const { isInside, elementPosition, elementSize, positionInside } = useMouseInEle
 
 <template>
   <div class="bg-zinc-100 w-full h-screen dark:bg-zinc-900 text-zinc-900 dark:text-zinc-100">
+    <div class="absolute transform translate-x-[--mouse-x] translate-y-[--mouse-y]">
+      <div
+        class="absolute w-4 h-4 rounded-full transform -translate-x-1/2 -translate-y-1/2 transition-all duration-300"
+        :class="{
+          'bg-red-500': !isInside,
+          'bg-green-500 scale-[2] cursor-pointer': isInside
+        }"
+      />
+    </div>
     <div class="flex flex-col items-center justify-center h-full">
       <div class="flex items-center justify-center gap-4">
         Breakpoint: {{ breakpoint }} {{ lessThanOrEqual('md') }}

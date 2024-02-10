@@ -33,6 +33,8 @@ async function copyToClipboard(string: string) {
   await new Promise((resolve) => setTimeout(resolve, 500));
   copy.value = false;
 }
+
+const { width, height } = useWindowInfos();
 </script>
 
 <template>
@@ -48,6 +50,7 @@ async function copyToClipboard(string: string) {
         >
           {{ appName }}
         </h1>
+        {{ width }}x{{ height }}
         <ThemeToggle />
       </div>
       <div

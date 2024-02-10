@@ -1,4 +1,21 @@
 
+## v0.0.11
+
+[compare changes](https://github.com/HugoRCD/blanked/compare/v0.0.10...v0.0.11)
+
+### 🚀 Enhancements
+
+- Add useMouseInElement and useWindowInfos composable ([9307702](https://github.com/HugoRCD/blanked/commit/9307702))
+- Add window width and height display ([a4d69d9](https://github.com/HugoRCD/blanked/commit/a4d69d9))
+
+### 🏡 Chore
+
+- **release:** V0.0.10 ([2c904c5](https://github.com/HugoRCD/blanked/commit/2c904c5))
+
+### ❤️ Contributors
+
+- HugoRCD ([@HugoRCD](http://github.com/HugoRCD))
+
 ## v0.0.10
 
 [compare changes](https://github.com/HugoRCD/blanked/compare/v0.0.9...v0.0.10)

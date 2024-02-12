@@ -2,12 +2,9 @@
 const { x, y } = useMouse();
 const target = ref(null);
 
-useClickElement(target, () => {
+onClickOutside(target, () => {
   toast('Clicked outside of the circle!');
 });
-useClickElement(target, () => {
-  toast('Clicked inside of the circle!');
-}, "inside");
 const size = useElementSize(target);
 
 const customBreakpoints = {
@@ -21,11 +18,6 @@ const {
   height,
   scroll,
   breakpoint,
-  greaterThan,
-  lessThan,
-  equalTo,
-  between,
-  greaterThanOrEqual,
   lessThanOrEqual
 } = useWindowInfos(customBreakpoints);
 
@@ -48,7 +40,7 @@ onUnmounted(() => {
 
 <template>
   <div class="bg-zinc-100 w-full h-screen dark:bg-zinc-900 text-zinc-900 dark:text-zinc-100">
-    <div class="absolute transform translate-x-[--x] translate-y-[--y]">
+    <div class="absolute pointer-events-none transform translate-x-[--x] translate-y-[--y]">
       <div
         class="absolute w-4 h-4 rounded-full transform -translate-x-1/2 -translate-y-1/2 transition-all duration-300"
         :class="{
@@ -94,13 +86,6 @@ onUnmounted(() => {
         </h1>
         <ThemeToggle />
       </div>
-      <Preview>
-        <img
-          src="/test.jpg"
-          alt="Test image"
-          class="rounded-lg w-96"
-        >
-      </Preview>
       <button
         class="mt-4 bg-black dark:bg-white text-white dark:text-black px-4 py-2 rounded-md"
         @click="() => toast('Hello There!')"

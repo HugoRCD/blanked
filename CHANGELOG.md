@@ -1,4 +1,16 @@
 
+## v0.0.12
+
+[compare changes](https://github.com/HugoRCD/blanked/compare/v0.0.11...v0.0.12)
+
+### 🚀 Enhancements
+
+- Add @vueuse/nuxt and useWindowSize composable ([25083fb](https://github.com/HugoRCD/blanked/commit/25083fb))
+
+### ❤️ Contributors
+
+- HugoRCD ([@HugoRCD](http://github.com/HugoRCD))
+
 ## v0.0.11
 
 [compare changes](https://github.com/HugoRCD/blanked/compare/v0.0.10...v0.0.11)

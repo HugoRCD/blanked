@@ -29,17 +29,31 @@ const {
   lessThanOrEqual
 } = useWindowInfos(customBreakpoints);
 
-const { isInside, elementPosition, elementSize, positionInside } = useMouseInElement(target);
+const { isOutside, elementX, elementY, elementPositionX, elementPositionY } = useMouseInElement(target);
+
+onMounted(() => {
+  document.addEventListener('mousemove', (e) => {
+    document.documentElement.style.setProperty('--x', `${e.clientX}px`);
+    document.documentElement.style.setProperty('--y', `${e.clientY}px`);
+  });
+});
+
+onUnmounted(() => {
+  document.removeEventListener('mousemove', (e) => {
+    document.documentElement.style.setProperty('--x', `${e.clientX}px`);
+    document.documentElement.style.setProperty('--y', `${e.clientY}px`);
+  });
+});
 </script>
 
 <template>
   <div class="bg-zinc-100 w-full h-screen dark:bg-zinc-900 text-zinc-900 dark:text-zinc-100">
-    <div class="absolute transform translate-x-[--mouse-x] translate-y-[--mouse-y]">
+    <div class="absolute transform translate-x-[--x] translate-y-[--y]">
       <div
         class="absolute w-4 h-4 rounded-full transform -translate-x-1/2 -translate-y-1/2 transition-all duration-300"
         :class="{
-          'bg-red-500': !isInside,
-          'bg-green-500 scale-[2] cursor-pointer': isInside
+          'bg-red-500': isOutside,
+          'bg-green-500 scale-[2] cursor-pointer': !isOutside
         }"
       />
     </div>
@@ -51,13 +65,13 @@ const { isInside, elementPosition, elementSize, positionInside } = useMouseInEle
         Circle size: {{ size.width }} x {{ size.height }}
       </div>
       <div class="flex items-center justify-center gap-4">
-        Mouse is {{ isInside ? 'inside' : 'outside' }} the circle
+        Mouse is {{ !isOutside ? 'inside' : 'outside' }} the circle
       </div>
       <div class="flex items-center justify-center gap-4">
-        Mouse position inside the circle: {{ positionInside.x }} x {{ positionInside.y }} - {{ elementSize.width }} x {{ elementSize.height }}
+        Mouse position inside the circle: {{ elementX }} x {{ elementY }}
       </div>
       <div class="flex items-center justify-center gap-4">
-        Element position: {{ elementPosition.x }} x {{ elementPosition.y }}
+        Element position: {{ elementPositionX }} x {{ elementPositionY }}
       </div>
       <div
         ref="target"
@@ -80,6 +94,13 @@ const { isInside, elementPosition, elementSize, positionInside } = useMouseInEle
         </h1>
         <ThemeToggle />
       </div>
+      <Preview>
+        <img
+          src="/test.jpg"
+          alt="Test image"
+          class="rounded-lg w-96"
+        >
+      </Preview>
       <button
         class="mt-4 bg-black dark:bg-white text-white dark:text-black px-4 py-2 rounded-md"
         @click="() => toast('Hello There!')"

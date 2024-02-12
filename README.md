@@ -15,6 +15,7 @@
 Blanked is a Nuxt module to improve your Nuxt workflow. It's a simple module to add everything you need to your Nuxt app, including:
 - TailwindCSS
 - Color Mode, add a color mode switcher to your app (dark/light or custom)
+- VueUse composables, add every composables from VueUse
 - Icons, add every icons from your favorite icon pack (Heroicons and Lucide are pre-installed)
 - Toasts, using the amazing [Vue Sonner](https://vue-sonner.vercel.app/) library
 
@@ -42,7 +43,8 @@ From
     "@iconify-json/lucide": "^1.1.154",
     "tailwindcss": "^3.4.1",
     "nuxt-icon": "^0.6.8",
-    "vue-sonner": "^1.0.3"
+    "vue-sonner": "^1.0.3",
+    "@vueuse/nuxt": "^1.0.0"
   }
 }
 ```

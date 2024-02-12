@@ -55,6 +55,7 @@ export default defineNuxtModule<ModuleOptions>({
     nuxt.options.css.push(resolve(runtimeDir, 'assets', 'main.css'));
 
     await installModule('nuxt-icon')
+    await installModule('@vueuse/nuxt')
     await installModule('@nuxtjs/color-mode', { classSuffix: '' })
     await installModule('@nuxtjs/tailwindcss', {
       exposeConfig: true,

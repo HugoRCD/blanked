@@ -34,7 +34,7 @@ async function copyToClipboard(string: string) {
   copy.value = false;
 }
 
-const { width, height } = useWindowInfos();
+const { width, height } = useWindowSize();
 </script>
 
 <template>

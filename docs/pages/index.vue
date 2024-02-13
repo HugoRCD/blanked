@@ -59,7 +59,7 @@ async function copyToClipboard(string: string) {
         <ThemeToggle />
       </div>
       <div
-        class="terminal  text-inverted text-xl bg-accent rounded-lg shadow-lg p-4 backdrop-blur-lg dark:bg-opacity-30"
+        class="terminal text-inverted text-xl bg-accent rounded-lg shadow-lg p-4 backdrop-blur-lg dark:bg-opacity-30"
         @click="copyToClipboard('bun i -d blanked')"
       >
         <div class="text-pretty  leading-6 tracking-wide cursor-pointer flex items-center justify-center gap-2">

@@ -8,40 +8,25 @@ changelog:
     - title: Breaking Changes 🛠
       labels:
         - breaking
-        - major
     - title: Features 🚀
       labels:
         - feat
-        - feature
-        - enhancement
     - title: Bug Fixes 🐞
       labels:
-        - bug
         - fix
-        - hotfix
-        - patch
     - title: Documentation 📚
       labels:
         - docs
-        - documentation
-        - content
     - title: Dependency Updates 📦
       labels:
         - dependencies
-        - dependency
-        - chore
     - title: Refactoring 🛠
       labels:
         - refactor
-        - refactoring
-        - cleanup
     - title: Other 🤷‍
       labels:
         - other
-        - misc
         - "*"
     - title: Security Fixes 🔒
       labels:
         - security
-        - secure
-        - vulnerability

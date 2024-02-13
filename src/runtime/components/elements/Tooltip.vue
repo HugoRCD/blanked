@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { defineProps, ref } from 'vue';
 import type { PropType } from 'vue'
 import {
   useFloating,

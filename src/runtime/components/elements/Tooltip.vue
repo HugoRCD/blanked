@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { defineProps, ref } from 'vue';
+import { ref } from 'vue';
 import type { PropType } from 'vue'
 import {
   useFloating,
@@ -96,6 +96,12 @@ function onMouseLeave () {
     <Transition
       name="fade"
       appear
+      enter-active-class="fade-enter-active"
+      enter-from-class="fade-enter"
+      enter-to-class="fade-enter-to"
+      leave-active-class="fade-leave"
+      leave-from-class="fade-leave-from"
+      leave-to-class="fade-leave-to"
     >
       <div
         v-if="open"
@@ -115,12 +121,13 @@ function onMouseLeave () {
 </template>
 
 <style scoped>
-.fade-enter-active,
-.fade-leave-active {
-  transition: opacity 0.2s;
+.fade-enter-active, .fade-leave-active {
+  transition: opacity 0.3s;
 }
-.fade-enter,
-.fade-leave-to {
+.fade-enter, .fade-leave-to {
   opacity: 0;
+}
+.fade-enter-to, .fade-leave {
+  opacity: 1;
 }
 </style>

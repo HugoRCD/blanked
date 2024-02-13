@@ -13,22 +13,7 @@ export default defineNuxtConfig({
     },
   },
 
-  experimental: {
-    noVueServer: true,
-  },
-
   modules: ['blanked'],
-
-  routeRules: {
-    "/": { isr: true, prerender: true },
-  },
-
-  nitro: {
-    prerender: {
-      crawlLinks: true,
-      routes: ['/'],
-    },
-  },
 
   css: ['~/main.css'],
 

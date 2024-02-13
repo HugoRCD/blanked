@@ -19,6 +19,6 @@ jobs:
       - name: Install Dependencies
         run: bun install
       - name: Release
-        run: npm publish
+        run: npm run prepack && npm publish
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}

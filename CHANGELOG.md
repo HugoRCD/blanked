@@ -1,4 +1,16 @@
 
+## v0.0.15
+
+[compare changes](https://github.com/HugoRCD/blanked/compare/v0.0.14...v0.0.15)
+
+### 🏡 Chore
+
+- **release:** V0.0.14 ([cf6cd73](https://github.com/HugoRCD/blanked/commit/cf6cd73))
+
+### ❤️ Contributors
+
+- HugoRCD ([@HugoRCD](http://github.com/HugoRCD))
+
 ## v0.0.14
 
 [compare changes](https://github.com/HugoRCD/blanked/compare/v0.0.13...v0.0.14)

@@ -39,8 +39,8 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <div class="bg-zinc-100 w-full h-screen dark:bg-zinc-900 text-zinc-900 dark:text-zinc-100">
-    <div class="absolute pointer-events-none transform translate-x-[--x] translate-y-[--y]">
+  <div class="bg-zinc-100 w-full h-[1000px] dark:bg-zinc-900 text-zinc-900 dark:text-zinc-100">
+    <!--    <div class="absolute pointer-events-none transform translate-x-[&#45;&#45;x] translate-y-[&#45;&#45;y]">
       <div
         class="absolute w-4 h-4 rounded-full transform -translate-x-1/2 -translate-y-1/2 transition-all duration-300"
         :class="{
@@ -48,7 +48,7 @@ onUnmounted(() => {
           'bg-green-500 scale-[2] cursor-pointer': !isOutside
         }"
       />
-    </div>
+    </div>-->
     <div class="flex flex-col items-center justify-center h-full">
       <div class="flex items-center justify-center gap-4">
         Breakpoint: {{ breakpoint }} {{ lessThanOrEqual('md') }}
@@ -92,6 +92,14 @@ onUnmounted(() => {
       >
         Render a toast
       </button>
+      <Tooltip
+        placement="bottom"
+        text="I'm a tooltip"
+      >
+        <button class="mt-4 bg-black dark:bg-white text-white dark:text-black px-3 py-1 rounded-md">
+          Hover me
+        </button>
+      </Tooltip>
     </div>
     <Toasts />
   </div>

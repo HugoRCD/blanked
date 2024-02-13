@@ -44,7 +44,8 @@ From
     "tailwindcss": "^3.4.1",
     "nuxt-icon": "^0.6.8",
     "vue-sonner": "^1.0.3",
-    "@vueuse/nuxt": "^1.0.0"
+    "@vueuse/nuxt": "^1.0.0",
+    "@floating-ui/vue": "^1.0.6"
   }
 }
 ```

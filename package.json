@@ -49,6 +49,7 @@
   },
   "dependencies": {
     "@egoist/tailwindcss-icons": "^1.7.2",
+    "@floating-ui/vue": "^1.0.6",
     "@iconify-json/heroicons": "^1.1.19",
     "@iconify-json/lucide": "^1.1.154",
     "@nuxtjs/color-mode": "latest",

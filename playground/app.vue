@@ -94,9 +94,11 @@ onUnmounted(() => {
       </button>
       <Tooltip
         placement="bottom"
-        text="Ben ouais, ca va mais ca irait mieux si tu pouvais fermer ta gueule"
+        text="I'm a tooltip"
       >
-        Salut ca va
+        <button class="mt-4 bg-black dark:bg-white text-white dark:text-black px-3 py-1 rounded-md">
+          Hover me
+        </button>
       </Tooltip>
     </div>
     <Toasts />

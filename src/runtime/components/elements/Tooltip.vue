@@ -30,20 +30,31 @@ const props = defineProps({
   text: {
     type: String,
     default: 'Hover me'
+  },
+  triggerClass: {
+    type: String,
+    default: ''
+  },
+  tooltipClass: {
+    type: String,
+    default: ''
   }
 });
+
+const defaultTooltipClass = "bg-white z-20 dark:bg-neutral-950 text-gray-900 dark:text-white rounded-md border border-gray-300 dark:border-gray-700 shadow px-3 py-1.5 text-xs truncate";
+const defaultTriggerClass = "max-w-xs relative inline-flex";
 
 const open = ref(false);
 let openTimeout: NodeJS.Timeout | null = null
 let closeTimeout: NodeJS.Timeout | null = null
 
 const trigger = ref(null);
-const container = ref(null);
+const tooltip = ref(null);
 
 const placement = ref(props.placement);
 const middleware = ref([offset(props.offset), flip(), shift()]);
 
-const { floatingStyles } = useFloating(trigger, container, { placement, middleware, whileElementsMounted: autoUpdate });
+const { floatingStyles } = useFloating(trigger, tooltip, { placement, middleware, whileElementsMounted: autoUpdate });
 
 function onMouseOver () {
   if (closeTimeout) {
@@ -77,7 +88,7 @@ function onMouseLeave () {
 <template>
   <div
     ref="trigger"
-    class="max-w-xs relative inline-flex"
+    :class="props.triggerClass || defaultTriggerClass"
     @mouseover="onMouseOver"
     @mouseleave="onMouseLeave"
   >
@@ -87,8 +98,8 @@ function onMouseLeave () {
     >
       <div
         v-if="open"
-        ref="container"
-        class="bg-white z-20 dark:bg-neutral-950 text-gray-900 dark:text-white rounded-md border border-gray-300 dark:border-gray-700 shadow px-3 py-1.5 text-xs truncate"
+        ref="tooltip"
+        :class="props.tooltipClass || defaultTooltipClass"
         :style="floatingStyles"
       >
         <slot name="content">

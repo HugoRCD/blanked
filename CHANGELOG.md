@@ -1,4 +1,16 @@
 
+## v0.0.14
+
+[compare changes](https://github.com/HugoRCD/blanked/compare/v0.0.13...v0.0.14)
+
+### 🚀 Enhancements
+
+- Add issue templates for bug reports, feature requests, and questions ([3735ce0](https://github.com/HugoRCD/blanked/commit/3735ce0))
+
+### ❤️ Contributors
+
+- HugoRCD ([@HugoRCD](http://github.com/HugoRCD))
+
 ## v0.0.13
 
 [compare changes](https://github.com/HugoRCD/blanked/compare/v0.0.12...v0.0.13)

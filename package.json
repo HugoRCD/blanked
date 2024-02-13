@@ -1,6 +1,6 @@
 {
   "name": "blanked",
-  "version": "0.0.13",
+  "version": "0.0.14",
   "description": "A Nuxt module to speed up your development",
   "repository": "HugoRCD/blanked",
   "license": "MIT",

@@ -18,6 +18,14 @@ const features = [
     title: 'Nuxt Icons',
     description: 'Use any icon from any icon pack with ease (Lucide and Heroicons are included by default)',
   },
+  {
+    title: 'VueUse',
+    description: 'The best collection of composables for Vue',
+  },
+  {
+    title: 'FloatingUI',
+    description: 'Make tooltips, popovers, and modals with ease',
+  }
 ]
 
 const copy = ref(false);
@@ -33,16 +41,14 @@ async function copyToClipboard(string: string) {
   await new Promise((resolve) => setTimeout(resolve, 500));
   copy.value = false;
 }
-
-const { width, height } = useWindowSize();
 </script>
 
 <template>
-  <div class="relative h-screen overflow-hidden bg-gradient-to-b from-gray flex flex-col justify-center items-center w-full">
+  <div class="relative bg-gradient-to-b from-gray flex flex-col justify-center items-center">
     <div
-      class="opacity-0 dark:opacity-30 absolute bg-accent size-[1000px] rounded-full blur-[100px] bottom-0 left-1/2 transform translate-x-[-50%] translate-y-[90%]"
+      class="opacity-0 dark:opacity-30 fixed bottom-0 bg-accent size-[1000px] rounded-full blur-[100px] left-1/2 transform translate-x-[-50%] translate-y-[90%]"
     />
-    <div class="mx-auto max-w-2xl text-center flex flex-col gap-6 justify-center h-96 px-4 sm:px-6 lg:px-8 z-10">
+    <div class="mx-auto my-16 max-w-2xl text-center flex flex-col gap-6 justify-center px-4 sm:px-6 lg:px-8 z-10">
       <div class="flex items-center justify-center gap-3">
         <h1
           class="bg-gradient-to-tl from-primary to-accent to-80% bg-clip-text text-transparent
@@ -50,7 +56,6 @@ const { width, height } = useWindowSize();
         >
           {{ appName }}
         </h1>
-        {{ width }}x{{ height }}
         <ThemeToggle />
       </div>
       <div
@@ -85,9 +90,20 @@ const { width, height } = useWindowSize();
         </span>
       </p>
       <div>
-        <div>
+        <div class="flex flex-col items-center justify-center gap-2">
+          <Tooltip
+            text="Hello there!"
+            placement="top"
+            tooltip-class="bg-black dark:bg-white text-white dark:text-black px-2 py-1 rounded-md shadow-lg border border-black dark:border-white text-xs"
+          >
+            <button
+              class="px-6 py-1 text-base font-medium text-inverted bg-accent border border-transparent rounded-md shadow-sm hover:bg-accent-hover"
+            >
+              Hover me
+            </button>
+          </Tooltip>
           <button
-            class="inline-flex items-center justify-center px-6 py-1 ml-4 text-base font-medium text-inverted bg-accent border border-transparent rounded-md shadow-sm hover:bg-accent-hover"
+            class="inline-flex items-center justify-center px-6 py-1 text-base font-medium text-inverted bg-accent border border-transparent rounded-md shadow-sm hover:bg-accent-hover"
             @click="() => toast.info('Hello There!')"
           >
             Render a toast

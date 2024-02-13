@@ -1,4 +1,21 @@
 
+## v0.0.13
+
+[compare changes](https://github.com/HugoRCD/blanked/compare/v0.0.12...v0.0.13)
+
+### 🚀 Enhancements
+
+- Add @floating-ui/vue package and Tooltip component ([11fa433](https://github.com/HugoRCD/blanked/commit/11fa433))
+- **tooltip:** Add customizable trigger and tooltip classes ([c35ee1e](https://github.com/HugoRCD/blanked/commit/c35ee1e))
+
+### 🏡 Chore
+
+- **release:** V0.0.12 ([f6bb01b](https://github.com/HugoRCD/blanked/commit/f6bb01b))
+
+### ❤️ Contributors
+
+- HugoRCD ([@HugoRCD](http://github.com/HugoRCD))
+
 ## v0.0.12
 
 [compare changes](https://github.com/HugoRCD/blanked/compare/v0.0.11...v0.0.12)

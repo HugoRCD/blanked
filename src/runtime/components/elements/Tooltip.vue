@@ -23,7 +23,7 @@ const props = defineProps({
     type: String as PropType<Placement>,
     default: 'top'
   },
-  offset: {
+  gap: {
     type: Number,
     default: 4
   },
@@ -52,7 +52,7 @@ const trigger = ref(null);
 const tooltip = ref(null);
 
 const placement = ref(props.placement);
-const middleware = ref([offset(props.offset), flip(), shift()]);
+const middleware = ref([offset(props.gap), flip(), shift()]);
 
 const { floatingStyles } = useFloating(trigger, tooltip, { placement, middleware, whileElementsMounted: autoUpdate });
 

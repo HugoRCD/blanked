@@ -83,11 +83,14 @@
   "commitlint": {
     "extends": [
       "@commitlint/config-conventional"
-    ]
+    ],
+    "rules": {
+      "type-enum": [2, "always", ["breaking", "feat", "fix", "docs", "dependencies", "refactor", "other", "security"]]
+    }
   },
   "simple-git-hooks": {
-    "pre-commit": "pnpm lint-staged",
-    "commit-msg": "pnpm commitlint --edit ${1}"
+    "pre-commit": "npx lint-staged",
+    "commit-msg": "npm commitlint --edit ${1}"
   },
   "lint-staged": {
     "*": "eslint --fix"

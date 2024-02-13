@@ -1,6 +1,7 @@
 # Dependencies
 node_modules
 playground/node_modules
+docs/node_modules
 
 # Logs
 *.log*

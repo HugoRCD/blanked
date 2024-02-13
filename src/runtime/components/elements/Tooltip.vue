@@ -8,7 +8,7 @@ import {
   autoUpdate
 } from '@floating-ui/vue';
 
-type Placement = 'bottom-end' | 'auto' | 'auto-start' | 'auto-end' | 'top' | 'bottom' | 'right' | 'left' | 'top-start' | 'top-end' | 'bottom-start' | 'right-start' | 'right-end' | 'left-start' | 'left-end';
+type Placement = 'bottom-end' | 'top' | 'bottom' | 'right' | 'left' | 'top-start' | 'top-end' | 'bottom-start' | 'right-start' | 'right-end' | 'left-start' | 'left-end';
 
 const props = defineProps({
   openDelay: {
@@ -31,30 +31,30 @@ const props = defineProps({
     type: String,
     default: 'Hover me'
   },
-  triggerClass: {
+  referenceClass: {
     type: String,
     default: ''
   },
-  tooltipClass: {
+  floatingClass: {
     type: String,
     default: ''
   }
 });
 
-const defaultTooltipClass = "bg-white z-20 dark:bg-neutral-950 text-gray-900 dark:text-white rounded-md border border-gray-300 dark:border-gray-700 shadow px-3 py-1.5 text-xs truncate";
-const defaultTriggerClass = "max-w-xs relative inline-flex";
+const defaultReferenceClass = "bg-white z-20 dark:bg-neutral-950 text-gray-900 dark:text-white rounded-md border border-gray-300 dark:border-gray-700 shadow px-3 py-1.5 text-xs truncate";
+const defaultFloatingClass = "max-w-xs relative inline-flex";
 
 const open = ref(false);
 let openTimeout: NodeJS.Timeout | null = null
 let closeTimeout: NodeJS.Timeout | null = null
 
-const trigger = ref(null);
-const tooltip = ref(null);
+const reference = ref(null);
+const floating = ref(null);
 
 const placement = ref(props.placement);
 const middleware = ref([offset(props.gap), flip(), shift()]);
 
-const { floatingStyles } = useFloating(trigger, tooltip, { placement, middleware, whileElementsMounted: autoUpdate });
+const { floatingStyles } = useFloating(reference, floating, { placement, middleware, whileElementsMounted: autoUpdate });
 
 function onMouseOver () {
   if (closeTimeout) {
@@ -87,8 +87,8 @@ function onMouseLeave () {
 
 <template>
   <div
-    ref="trigger"
-    :class="props.triggerClass || defaultTriggerClass"
+    ref="reference"
+    :class="referenceClass.length ? referenceClass : defaultFloatingClass"
     @mouseover="onMouseOver"
     @mouseleave="onMouseLeave"
   >
@@ -98,8 +98,8 @@ function onMouseLeave () {
     >
       <div
         v-if="open"
-        ref="tooltip"
-        :class="props.tooltipClass || defaultTooltipClass"
+        ref="floating"
+        :class="floatingClass.length ? floatingClass : defaultReferenceClass"
         :style="floatingStyles"
       >
         <slot name="content">
@@ -107,7 +107,9 @@ function onMouseLeave () {
         </slot>
       </div>
     </Transition>
-    <slot />
+    <slot :open="open">
+      Hover
+    </slot>
   </div>
 </template>
 

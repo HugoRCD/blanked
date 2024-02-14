@@ -13,10 +13,6 @@ export default defineNuxtConfig({
     },
   },
 
-  experimental: {
-    noVueServer: true,
-  },
-
   modules: ['blanked'],
 
   css: ['~/main.css'],

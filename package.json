@@ -60,6 +60,7 @@
     "@tailwindcss/typography": "^0.5.10",
     "@vueuse/nuxt": "^10.7.2",
     "nuxt-icon": "^0.6.8",
+    "radix-vue": "^1.4.6",
     "tailwindcss": "^3.4.1",
     "vue-sonner": "^1.0.3"
   },

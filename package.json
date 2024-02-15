@@ -1,6 +1,6 @@
 {
   "name": "blanked",
-  "version": "0.0.15",
+  "version": "0.0.16",
   "description": "A Nuxt module to speed up your development",
   "repository": "HugoRCD/blanked",
   "license": "MIT",
@@ -86,7 +86,20 @@
       "@commitlint/config-conventional"
     ],
     "rules": {
-      "type-enum": [2, "always", ["breaking", "feat", "fix", "docs", "dependencies", "refactor", "other", "security"]]
+      "type-enum": [
+        2,
+        "always",
+        [
+          "breaking",
+          "feat",
+          "fix",
+          "docs",
+          "dependencies",
+          "refactor",
+          "other",
+          "security"
+        ]
+      ]
     }
   },
   "simple-git-hooks": {

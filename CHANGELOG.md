@@ -1,4 +1,20 @@
 
+## v0.0.16
+
+[compare changes](https://github.com/HugoRCD/blanked/compare/v0.0.15...v0.0.16)
+
+### 🚀 Enhancements
+
+- Add Dialog component ([5552211](https://github.com/HugoRCD/blanked/commit/5552211))
+
+### 🏡 Chore
+
+- **release:** V0.0.15 ([74c74b9](https://github.com/HugoRCD/blanked/commit/74c74b9))
+
+### ❤️ Contributors
+
+- HugoRCD ([@HugoRCD](http://github.com/HugoRCD))
+
 ## v0.0.15
 
 [compare changes](https://github.com/HugoRCD/blanked/compare/v0.0.14...v0.0.15)

@@ -12,16 +12,16 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-
       - run: corepack enable
       - uses: actions/setup-node@v4
         with:
           node-version: 20
           cache: "pnpm"
-      - run: pnpm install
-
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v1
+      - run: bun install
       - name: Fix lint issues
-        run: npm run lint:fix
+        run: bun run lint:fix
       - uses: autofix-ci/action@ea32e3a12414e6d3183163c3424a7d7a8631ad84
         with:
           commit-message: "fix: lint issues"

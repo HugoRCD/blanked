@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import {
-  DialogClose,
   DialogContent,
   DialogDescription,
   DialogOverlay,
@@ -28,19 +27,19 @@ defineProps({
     default: 'A simple dialog',
   },
 });
+const open = defineModel({type: Boolean, default: false});
 </script>
 
 <template>
-  <DialogRoot>
+  <DialogRoot v-model:open="open">
     <DialogTrigger>
-      <slot name="trigger">
-        <button class="bg-blue-500 text-white px-4 py-2 rounded-md">
-          Open Dialog
-        </button>
-      </slot>
+      <button
+        class="bg-blue-500 text-white px-4 py-2 rounded-md"
+      >
+        Open Dialog
+      </button>
     </DialogTrigger>
     <DialogPortal>
-      <DialogClose class="absolute top-4 right-4" />
       <VisuallyHidden>
         <DialogTitle class="text-2xl font-bold">
           {{ title }}

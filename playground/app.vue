@@ -36,6 +36,7 @@ onUnmounted(() => {
     document.documentElement.style.setProperty('--y', `${e.clientY}px`);
   });
 });
+const open = ref(false);
 </script>
 
 <template>
@@ -86,14 +87,8 @@ onUnmounted(() => {
         </h1>
         <ThemeToggle />
       </div>
-      <Dialog>
-        <template #trigger>
-          <button
-            class="bg-blue-500 text-white px-4 py-2 rounded-md"
-          >
-            Open Dialog !
-          </button>
-        </template>
+      {{ open }}
+      <Modal v-model="open">
         <div class="bg-white dark:bg-neutral-800 p-4 rounded-md w-96 h-96 flex flex-col items-center justify-center border-2 border-black/10 dark:border-white/10 shadow-lg text-black dark:text-white">
           <h1 class="text-2xl font-bold">
             Hello World
@@ -102,7 +97,7 @@ onUnmounted(() => {
             This is a dialog
           </p>
         </div>
-      </Dialog>
+      </Modal>
       <button
         class="mt-4 bg-black dark:bg-white text-white dark:text-black px-4 py-2 rounded-md"
         @click="() => toast('Hello There!')"

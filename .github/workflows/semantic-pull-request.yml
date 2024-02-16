@@ -20,19 +20,14 @@ jobs:
         id: lint_pr_title
         with:
           types: |
-            version
+            breaking
             feat
-            perf
             fix
-            refactor
             docs
-            build
-            types
-            chore
-            examples
-            test
-            style
-            ci
+            dependencies
+            refactor
+            security
+            other
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 

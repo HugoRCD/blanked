@@ -1,4 +1,30 @@
 
+## v0.0.17
+
+[compare changes](https://github.com/HugoRCD/blanked/compare/v0.0.16...v0.0.17)
+
+### 🚀 Enhancements
+
+- Add autofix workflow and semantic PR title validation ([67fa2d9](https://github.com/HugoRCD/blanked/commit/67fa2d9))
+- Update autofix workflow and lint-staged configuration ([2a5026d](https://github.com/HugoRCD/blanked/commit/2a5026d))
+- Add eslint config to package.json ([5b9c35c](https://github.com/HugoRCD/blanked/commit/5b9c35c))
+
+### 🩹 Fixes
+
+- Update linting configuration ([f1325a5](https://github.com/HugoRCD/blanked/commit/f1325a5))
+
+### 💅 Refactors
+
+- Remove unnecessary files and update test scripts ([8b50547](https://github.com/HugoRCD/blanked/commit/8b50547))
+
+### 🤖 CI
+
+- Update PR config ([3496f60](https://github.com/HugoRCD/blanked/commit/3496f60))
+
+### ❤️ Contributors
+
+- HugoRCD ([@HugoRCD](http://github.com/HugoRCD))
+
 ## v0.0.16
 
 [compare changes](https://github.com/HugoRCD/blanked/compare/v0.0.16...v0.0.16)

@@ -1,7 +1,0 @@
-.github/
-bun.lockb
-package.json
-node_modules/
-*.d.ts
-dist
-.nuxt

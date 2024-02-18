@@ -45,7 +45,8 @@
     "lint": "eslint .",
     "lint:fix": "eslint --fix .",
     "test": "vitest run",
-    "test:watch": "vitest watch"
+    "test:watch": "vitest watch",
+    "typecheck": "tsc --noEmit"
   },
   "dependencies": {
     "@egoist/tailwindcss-icons": "^1.7.2",
@@ -83,6 +84,6 @@
     "pre-commit": "npx lint-staged"
   },
   "lint-staged": {
-    "*": "eslint . --fix --ignore-pattern .eslintignore"
+    "*": "eslint . --fix"
   }
 }

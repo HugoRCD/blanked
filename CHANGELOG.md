@@ -1,6 +1,31 @@
 
 ## v0.0.16
 
+[compare changes](https://github.com/HugoRCD/blanked/compare/v0.0.16...v0.0.16)
+
+### 🚀 Enhancements
+
+- Add autofix workflow and semantic PR title validation ([67fa2d9](https://github.com/HugoRCD/blanked/commit/67fa2d9))
+- Update autofix workflow and lint-staged configuration ([2a5026d](https://github.com/HugoRCD/blanked/commit/2a5026d))
+
+### 🩹 Fixes
+
+- Update linting configuration ([f1325a5](https://github.com/HugoRCD/blanked/commit/f1325a5))
+
+### 💅 Refactors
+
+- Remove unnecessary files and update test scripts ([8b50547](https://github.com/HugoRCD/blanked/commit/8b50547))
+
+### 🤖 CI
+
+- Update PR config ([3496f60](https://github.com/HugoRCD/blanked/commit/3496f60))
+
+### ❤️ Contributors
+
+- HugoRCD <hugo.richard@epitech.eu>
+
+## v0.0.16
+
 [compare changes](https://github.com/HugoRCD/blanked/compare/v0.0.15...v0.0.16)
 
 ### 🚀 Enhancements

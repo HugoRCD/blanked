@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import Sidebar from "#blanked/components/elements/Sidebar.vue";
+
 const { x, y } = useMouse();
 const target = ref(null);
 
@@ -37,6 +39,7 @@ onUnmounted(() => {
   });
 });
 const open = ref(false);
+const openSidebar = ref(false);
 </script>
 
 <template>
@@ -112,6 +115,15 @@ const open = ref(false);
           Hover me
         </button>
       </Tooltip>
+      <div>
+        <button
+          class="cursor-pointer"
+          @click="openSidebar = !openSidebar"
+        >
+          Open Sidebar
+        </button>
+        <Sidebar v-model="openSidebar" />
+      </div>
     </div>
     <Toasts />
   </div>

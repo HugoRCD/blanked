@@ -30,3 +30,6 @@ changelog:
     - title: Security Fixes 🔒
       labels:
         - security
+    - title: Bump Version 🏷
+      labels:
+        - version

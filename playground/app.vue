@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import Sidebar from "#blanked/components/elements/Sidebar.vue";
+
 const { x, y } = useMouse();
 const target = ref(null);
 
@@ -37,6 +39,7 @@ onUnmounted(() => {
   });
 });
 const open = ref(false);
+const openSidebar = ref(false);
 </script>
 
 <template>
@@ -87,17 +90,26 @@ const open = ref(false);
         </h1>
         <ThemeToggle />
       </div>
-      {{ open }}
-      <Modal v-model="open">
-        <div class="bg-white dark:bg-neutral-800 p-4 rounded-md w-96 h-96 flex flex-col items-center justify-center border-2 border-black/10 dark:border-white/10 shadow-lg text-black dark:text-white">
-          <h1 class="text-2xl font-bold">
-            Hello World
-          </h1>
-          <p class="mt-4">
-            This is a dialog
-          </p>
-        </div>
-      </Modal>
+      <div class="flex items-center justify-center gap-4">
+        <Modal v-model="open">
+          <div class="bg-white dark:bg-neutral-800 p-4 rounded-md w-96 h-96 flex flex-col items-center justify-center border-2 border-black/10 dark:border-white/10 shadow-lg text-black dark:text-white">
+            <h1 class="text-2xl font-bold">
+              Hello World
+            </h1>
+            <p class="mt-4">
+              This is a dialog
+            </p>
+          </div>
+        </Modal>
+        <Sidebar v-model="openSidebar">
+          <div class="flex flex-col h-full items-center justify-center gap-4 w-72 bg-white dark:bg-neutral-800 p-4 shadow-lg text-black dark:text-white">
+            <h1 class="text-4xl font-bold">
+              Blanked
+            </h1>
+            <ThemeToggle />
+          </div>
+        </Sidebar>
+      </div>
       <button
         class="mt-4 bg-black dark:bg-white text-white dark:text-black px-4 py-2 rounded-md"
         @click="() => toast('Hello There!')"

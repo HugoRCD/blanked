@@ -1,103 +1,95 @@
 <script setup lang="ts">
-import { ref, watch } from 'vue';
-import { onClickOutside } from '@vueuse/core'
+import { Dialog, DialogPanel, TransitionRoot, TransitionChild, provideUseId } from '@headlessui/vue'
 
-const open = defineModel({ type: Boolean, default: false });
+import type { PropType } from "vue";
+import { ref } from 'vue';
 
-const emit = defineEmits(["close"]);
-
-function close() {
-  open.value = false;
-  setTimeout(() => {
-    document.body.style.removeProperty("overflow");
-    emit("close");
-  }, 500);
-}
-const slideOver = ref(null);
-onClickOutside(slideOver, () => close());
-
-watch(open, () => {
-  if (open.value)
-    document.body.style.setProperty("overflow", "hidden");
+const props = defineProps({
+  defaultOpen: {
+    type: Boolean,
+    default: false,
+  },
+  overlay: {
+    type: Boolean,
+    default: true,
+  },
+  preventClose: {
+    type: Boolean,
+    default: false,
+  },
+  side: {
+    type: String as PropType<"left" | "right">,
+    default: "right",
+  },
 });
+
+const open = defineModel({type: Boolean, default: false});
+const dialog = ref(null);
+
+const emit = defineEmits(['close', 'close-prevented']);
+
+function close (value: boolean) {
+  if (props.preventClose) {
+    emit('close-prevented')
+
+    return
+  }
+  open.value = value
+  emit('close')
+}
 </script>
 
 <template>
-  <div class="relative">
-    <transition
-      enter-active-class="ease-in-out duration-500"
-      enter-from-class="opacity-0"
-      enter-to-class="opacity-100"
-      leave-active-class="ease-in-out duration-500"
-      leave-from-class="opacity-100"
-      leave-to-class="opacity-0"
+  <div>
+    <slot name="trigger">
+      <button
+        class="px-4 py-2 text-white bg-blue-500 rounded-md"
+        @click="open = true"
+      >
+        Open Sidebar
+      </button>
+    </slot>
+    <TransitionRoot
+      as="template"
+      :show="open"
     >
-      <div
-        v-if="open"
-        class="fixed inset-0 bg-gray-700 bg-opacity-50 backdrop-blur-sm transition-opacity"
-      />
-    </transition>
-    <div class="fixed inset-0 overflow-hidden pointer-events-none">
-      <div class="absolute inset-0 overflow-hidden pointer-events-none">
-        <div
-          class="pointer-events-none fixed inset-y-0 right-0 flex max-w-full pl-10"
+      <Dialog
+        class="fixed inset-0 flex z-50"
+        :class="side === 'left' ? 'justify-start' : 'justify-end'"
+        :initial-focus="dialog"
+        @close="close"
+      >
+        <TransitionChild
+          v-if="overlay"
+          as="template"
+          enter="ease-out duration-300"
+          enter-from="opacity-0"
+          enter-to="opacity-100"
+          leave="ease-in duration-200"
+          leave-from="opacity-100"
+          leave-to="opacity-0"
         >
-          <transition
-            enter-active-class="transform transition ease-in-out duration-500"
-            enter-from-class="translate-x-full"
-            enter-to-class="translate-x-0"
-            leave-active-class="transform transition ease-in-out duration-500"
-            leave-from-class="translate-x-0"
-            leave-to-class="translate-x-full"
-          >
-            <div
-              v-if="open"
-              ref="slideOver"
-              class="pointer-events-auto w-screen max-w-md relative"
-            >
-              <div
-                class="absolute top-0 left-0 -ml-8 flex pt-2 pr-2 sm:-ml-10 sm:pr-4"
-              >
-                <button
-                  type="button"
-                  class="rounded-md text-gray-100 focus:outline-none focus:ring-2 focus:ring-white h-8 w-8 flex items-center justify-center"
-                  @click="close"
-                >
-                  <span class="sr-only">Close panel</span>
+          <div class="fixed z-0 inset-0 transition-opacity bg-gray-200/75 dark:bg-gray-800/75" />
+        </TransitionChild>
 
-                  <icon
-                    name="fluent:dismiss-24-filled"
-                    class="h-6 w-6"
-                  />
-                </button>
-              </div>
-              <div class="flex h-full flex-col overflow-y-scroll bg-white py-6 shadow-xl">
-                <div class="px-4 sm:px-6">
-                  <div class="flex items-start justify-between">
-                    <h3 class="text-base font-semibold leading-6 text-gray-900">
-                      Panel title
-                    </h3>
-                    <div class="ml-3 flex h-7 items-center">
-                      <button
-                        type="button"
-                        class="relative rounded-md bg-white text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
-                        @click="open = false"
-                      >
-                        <span class="absolute -inset-2.5" />
-                        <span class="sr-only">Close panel</span>
-                      </button>
-                    </div>
-                  </div>
-                </div>
-                <div class="relative mt-6 flex-1 px-4 sm:px-6 bg-gray-400 justify-center items-center">
-                  Sidebar
-                </div>
-              </div>
-            </div>
-          </transition>
-        </div>
-      </div>
-    </div>
+        <TransitionChild
+          as="template"
+          enter="transform transition ease-in-out duration-300"
+          leave="transform transition ease-in-out duration-200"
+          :enter-from="side === 'left' ? '-translate-x-full' : 'translate-x-full'"
+          enter-to="translate-x-0"
+          leave-from="translate-x-0"
+          :leave-to="side === 'left' ? '-translate-x-full' : 'translate-x-full'"
+        >
+          <DialogPanel
+            ref="dialog"
+            class="relative"
+          >
+            <slot />
+          </DialogPanel>
+        </TransitionChild>
+      </Dialog>
+    </TransitionRoot>
   </div>
 </template>
 

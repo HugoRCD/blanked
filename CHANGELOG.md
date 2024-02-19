@@ -1,4 +1,20 @@
 
+## v0.0.18
+
+[compare changes](https://github.com/HugoRCD/blanked/compare/v0.0.17...v0.0.18)
+
+### 🚀 Enhancements
+
+- Add Sidebar component and functionality ([e0e8f59](https://github.com/HugoRCD/blanked/commit/e0e8f59))
+
+### 💅 Refactors
+
+- Some ci update ([37560f3](https://github.com/HugoRCD/blanked/commit/37560f3))
+
+### ❤️ Contributors
+
+- HugoRCD ([@HugoRCD](http://github.com/HugoRCD))
+
 ## v0.0.17
 
 [compare changes](https://github.com/HugoRCD/blanked/compare/v0.0.16...v0.0.17)

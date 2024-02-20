@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Dialog, DialogPanel, TransitionRoot, TransitionChild, provideUseId } from '@headlessui/vue'
+import { Dialog, DialogPanel, TransitionRoot, TransitionChild } from '@headlessui/vue'
 
 import type { PropType } from "vue";
 import { ref } from 'vue';

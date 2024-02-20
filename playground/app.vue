@@ -92,6 +92,13 @@ const openSidebar = ref(false);
       </div>
       <div class="flex items-center justify-center gap-4">
         <Modal v-model="open">
+          <template #trigger>
+            <button
+              class="px-4 py-2 text-white bg-red-500 rounded-md"
+            >
+              Open Dialog
+            </button>
+          </template>
           <div class="bg-white dark:bg-neutral-800 p-4 rounded-md w-96 h-96 flex flex-col items-center justify-center border-2 border-black/10 dark:border-white/10 shadow-lg text-black dark:text-white">
             <h1 class="text-2xl font-bold">
               Hello World

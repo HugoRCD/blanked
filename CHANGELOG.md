@@ -1,4 +1,20 @@
 
+## v0.0.19
+
+[compare changes](https://github.com/HugoRCD/blanked/compare/v0.0.18...v0.0.19)
+
+### 🩹 Fixes
+
+- Lint issues ([4193a01](https://github.com/HugoRCD/blanked/commit/4193a01))
+
+### 🏡 Chore
+
+- **release:** V0.0.18 ([cf893a1](https://github.com/HugoRCD/blanked/commit/cf893a1))
+
+### ❤️ Contributors
+
+- HugoRCD ([@HugoRCD](http://github.com/HugoRCD))
+
 ## v0.0.18
 
 [compare changes](https://github.com/HugoRCD/blanked/compare/v0.0.17...v0.0.18)

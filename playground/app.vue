@@ -85,7 +85,7 @@ const openSidebar = ref(false);
         Scroll position: {{ scroll.x }} x {{ scroll.y }}
       </div>
       <div class="flex items-center justify-center gap-4">
-        <h1 class="text-4xl font-bold">
+        <h1 class="text-4xl font-bold font-space-grotesk">
           Blanked
         </h1>
         <ThemeToggle />
@@ -135,3 +135,13 @@ const openSidebar = ref(false);
     <Toasts />
   </div>
 </template>
+
+<style scoped>
+.font-geist {
+  font-family: 'Geist', sans-serif;
+}
+
+.font-space-grotesk {
+  font-family: 'Space Grotesk', sans-serif;
+}
+</style>

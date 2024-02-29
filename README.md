@@ -19,6 +19,7 @@ Blanked is a Nuxt module to improve your Nuxt workflow. It's a simple module to 
 - Icons, add every icons from your favorite icon pack (Heroicons and Lucide are pre-installed)
 - Toasts, using the amazing [Vue Sonner](https://vue-sonner.vercel.app/)
 - Tooltip and other floating stuff from [Floating UI](https://floating-ui.com/)
+- Plug and play custom web font optimization and configuration from all major providers with [Nuxt Fonts](https://github.com/nuxt/fonts)
 
 From
 ```json
@@ -35,6 +36,7 @@ From
     "nuxt": "latest",
     "@nuxtjs/color-mode": "latest",
     "@nuxtjs/tailwindcss": "latest",
+    "@nuxt/fonts": "latest",
     "@tailwindcss/aspect-ratio": "^0.4.2",
     "@tailwindcss/container-queries": "^0.1.1",
     "@tailwindcss/forms": "^0.5.7",

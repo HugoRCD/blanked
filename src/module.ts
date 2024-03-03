@@ -2,12 +2,11 @@ import {
   defineNuxtModule,
   createResolver,
   installModule,
-  addTemplate,
   addComponentsDir,
   addImportsSources, addImportsDir,
 } from "@nuxt/kit";
-import { join } from 'node:path'
 import { name, version } from '../package.json';
+import { iconsPlugin, getIconCollections } from "@egoist/tailwindcss-icons";
 import type { CollectionNames, IconsPluginOptions } from "@egoist/tailwindcss-icons";
 
 // Module options TypeScript interface definition
@@ -54,38 +53,34 @@ export default defineNuxtModule<ModuleOptions>({
 
     nuxt.options.css.push(resolve(runtimeDir, 'assets', 'main.css'));
 
+    // @ts-ignore
+    nuxt.hook('tailwindcss:config', function (tailwindConfig) {
+      tailwindConfig.plugins = tailwindConfig.plugins || []
+      tailwindConfig.plugins.push(iconsPlugin(Array.isArray(options.icons) ? { collections: getIconCollections(options.icons) } : typeof options.icons === 'object' ? options.icons as IconsPluginOptions : {}));
+    });
+
     await installModule('nuxt-icon')
     await installModule('@vueuse/nuxt')
     await installModule('@nuxt/fonts')
     await installModule('@nuxtjs/color-mode', { classSuffix: '' })
     await installModule('@nuxtjs/tailwindcss', {
       exposeConfig: true,
-      configPath: [
-        addTemplate({
-          filename: 'blanked-tailwind.config.cjs',
-          write: true,
-          getContents: () => `
-            const { iconsPlugin, getIconCollections } = require('@egoist/tailwindcss-icons')
-            module.exports = {
-              darkMode: 'class',
-              content: {
-                files: [
-                  ${JSON.stringify(resolve(runtimeDir, 'components/**/*.{vue,mjs,ts}'))},
-                  ${JSON.stringify(resolve(runtimeDir, '*.{mjs,js,ts}'))}
-                ]
-              },
-              plugins: [
-                require('@tailwindcss/forms')({ strategy: 'class' }),
-                require('@tailwindcss/aspect-ratio'),
-                require('@tailwindcss/typography'),
-                require('@tailwindcss/container-queries'),
-                iconsPlugin(${Array.isArray(options.icons) ? `{ collections: getIconCollections(${JSON.stringify(options.icons)}) }` : typeof options.icons === 'object' ? JSON.stringify(options.icons) : '{}'})
-              ]
-            }
-          `
-        }).dst,
-        join(nuxt.options.rootDir, 'tailwind.config')
-      ]
+      config: {
+        darkMode: 'class',
+        content: {
+          files: [
+            resolve('./runtime/components/**/*.{vue,mjs,ts}'),
+            resolve('./runtime/*.{mjs,js,ts}')
+          ]
+        },
+        plugins: [
+          require('@tailwindcss/forms')({ strategy: 'class' }),
+          require('@tailwindcss/aspect-ratio'),
+          require('@tailwindcss/typography'),
+          require('@tailwindcss/container-queries'),
+          iconsPlugin(Array.isArray(options.icons) || options.icons === 'all' ? { collections: getIconCollections(options.icons) } : typeof options.icons === 'object' ? options.icons as IconsPluginOptions : {})
+        ],
+      }
     })
     addImportsSources({
       from: 'vue-sonner',

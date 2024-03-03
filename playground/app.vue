@@ -95,6 +95,7 @@ const openSidebar = ref(false);
           <template #trigger>
             <button
               class="px-4 py-2 text-white bg-red-500 rounded-md"
+              @click="() => open = true"
             >
               Open Dialog
             </button>

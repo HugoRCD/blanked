@@ -1,4 +1,20 @@
 
+## v0.0.21
+
+[compare changes](https://github.com/HugoRCD/blanked/compare/v0.0.20...v0.0.21)
+
+### 💅 Refactors
+
+- Remove unecessary css file ([81bd7b5](https://github.com/HugoRCD/blanked/commit/81bd7b5))
+
+### 🏡 Chore
+
+- **release:** V0.0.20 ([a1c8b92](https://github.com/HugoRCD/blanked/commit/a1c8b92))
+
+### ❤️ Contributors
+
+- HugoRCD ([@HugoRCD](http://github.com/HugoRCD))
+
 ## v0.0.20
 
 [compare changes](https://github.com/HugoRCD/blanked/compare/v0.0.19...v0.0.20)

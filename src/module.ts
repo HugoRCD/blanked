@@ -51,8 +51,6 @@ export default defineNuxtModule<ModuleOptions>({
 
     nuxt.options.build.transpile.push(runtimeDir)
 
-    nuxt.options.css.push(resolve(runtimeDir, 'assets', 'main.css'));
-
     // @ts-ignore
     nuxt.hook('tailwindcss:config', function (tailwindConfig) {
       tailwindConfig.plugins = tailwindConfig.plugins || []

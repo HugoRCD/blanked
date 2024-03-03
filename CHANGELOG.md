@@ -1,4 +1,20 @@
 
+## v0.0.22
+
+[compare changes](https://github.com/HugoRCD/blanked/compare/v0.0.21...v0.0.22)
+
+### 🩹 Fixes
+
+- Import bug ([2b79885](https://github.com/HugoRCD/blanked/commit/2b79885))
+
+### 🏡 Chore
+
+- **release:** V0.0.21 ([f46309b](https://github.com/HugoRCD/blanked/commit/f46309b))
+
+### ❤️ Contributors
+
+- HugoRCD ([@HugoRCD](http://github.com/HugoRCD))
+
 ## v0.0.21
 
 [compare changes](https://github.com/HugoRCD/blanked/compare/v0.0.20...v0.0.21)

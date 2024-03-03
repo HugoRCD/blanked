@@ -1,4 +1,16 @@
 
+## v0.0.20
+
+[compare changes](https://github.com/HugoRCD/blanked/compare/v0.0.19...v0.0.20)
+
+### 🚀 Enhancements
+
+- Add functionality to open dialog on button click ([96b601a](https://github.com/HugoRCD/blanked/commit/96b601a))
+
+### ❤️ Contributors
+
+- HugoRCD ([@HugoRCD](http://github.com/HugoRCD))
+
 ## v0.0.19
 
 [compare changes](https://github.com/HugoRCD/blanked/compare/v0.0.18...v0.0.19)

@@ -60,6 +60,7 @@ export default defineNuxtModule<ModuleOptions>({
     await installModule('nuxt-icon')
     await installModule('@vueuse/nuxt')
     await installModule('@nuxt/fonts')
+    await installModule('nuxt-headlessui')
     await installModule('@nuxtjs/color-mode', { classSuffix: '' })
     await installModule('@nuxtjs/tailwindcss', {
       exposeConfig: true,

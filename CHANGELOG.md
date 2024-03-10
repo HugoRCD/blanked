@@ -1,4 +1,16 @@
 
+## v0.0.23
+
+[compare changes](https://github.com/HugoRCD/blanked/compare/v0.0.22...v0.0.23)
+
+### 🏡 Chore
+
+- **release:** V0.0.22 ([18d94ae](https://github.com/HugoRCD/blanked/commit/18d94ae))
+
+### ❤️ Contributors
+
+- HugoRCD ([@HugoRCD](http://github.com/HugoRCD))
+
 ## v0.0.22
 
 [compare changes](https://github.com/HugoRCD/blanked/compare/v0.0.21...v0.0.22)

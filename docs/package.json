@@ -11,9 +11,9 @@
   },
   "devDependencies": {
     "blanked": "latest",
-    "nuxt": "^3.9.1",
+    "nuxt": "^3.11.2",
     "sitemap": "^7.1.1",
-    "vue": "^3.4.10",
-    "vue-router": "^4.2.5"
+    "vue": "^3.4.23",
+    "vue-router": "^4.3.1"
   }
 }
